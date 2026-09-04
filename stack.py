@@ -1,8 +1,8 @@
 import node
 
 class Stack():
-    def __init__(self, head):
-        self.head = head
+    def __init__(self):
+        self.head = None
 
     def push(self, value):
         new = node.Node(value)
@@ -11,11 +11,13 @@ class Stack():
 
     def pop(self):
         x = self.head
-        if self.head.next is not None:
+        if self.head is None:
+            return False
+        elif self.head.next is not None:
             self.head = self.head.next
-
         else:
             self.head = None
+
         return x.data
 
     def peek(self):
