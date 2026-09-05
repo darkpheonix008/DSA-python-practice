@@ -7,7 +7,7 @@ Learning Data Structures and Algorithms in Python, from the ground up.
 - [x] Big O Notation / Time Complexity
 - [x] Singly Linked List (append, prepend, delete, search, display)
 - [x] Stack (push, pop, peek)
-- [ ] Queue
+- [x] Queue
 - [ ] Doubly Linked List
 - [ ] Recursion
 - [ ] Sorting Algorithms
@@ -17,4 +17,5 @@ Learning Data Structures and Algorithms in Python, from the ground up.
 
 - `node.py` — Node class and SinglyLinkedList implementation
 - `stack.py` — Stack implementation (built on Node)
+- `queue.py` — Queue implementation (built on Node)
 - `main.py` — testing/experimenting with the above
