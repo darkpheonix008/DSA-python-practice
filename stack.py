@@ -1,11 +1,11 @@
-import node
+import singly_linked_list
 
-class Stack():
+class Stack:
     def __init__(self):
         self.head = None
 
     def push(self, value):
-        new = node.Node(value)
+        new = singly_linked_list.Node(value)
         new.next = self.head
         self.head = new
 

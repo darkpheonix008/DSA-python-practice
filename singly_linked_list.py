@@ -23,7 +23,7 @@ class SinglyLinkedList:
         self.head = new_node
 
     def delete(self, value):
-        if self.head == None:
+        if self.head is None:
             return False
 
         elif self.head.data == value:

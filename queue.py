@@ -1,12 +1,12 @@
-import node
+import singly_linked_list
 
-class Queue():
+class Queue:
     def __init__(self):
         self.head = None
         self.tail = None
 
     def enqueue(self, value):
-        new = node.Node(value)
+        new = singly_linked_list.Node(value)
         if self.head is None:
             self.head = new
             self.tail = new
