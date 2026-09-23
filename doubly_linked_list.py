@@ -20,6 +20,48 @@ class DoublyLinkedList:
             new.prev = self.tail
             self.tail = new
 
+    def prepend(self,value):
+        new = Node(value)
+        if self.head is None:
+            self.head = new
+            self.tail = new
+        else:
+            self.head.prev = new
+            new.next = self.head
+            self.head = new
+
+    def insert(self, value, index):
+        if index>0:
+            count = 0
+            new = Node(value)
+            current = self.head
+            while current is not None:
+                if count == index:
+                    new.prev = current.prev
+                    current.prev.next = new
+                    current.prev = new
+                    new.next = current
+
+
+                    return True
+                current = current.next
+                count += 1
+
+            return False
+        else:
+            print("can't use insert for index less than 1")
+
+    def get(self,num):
+        count = 0
+        current = self.head
+        while current is not None:
+            if count == num:
+                return current.data
+
+            current = current.next
+            count+=1
+        return False
+
 
     def delete(self,value):
         if self.head is None:
@@ -41,10 +83,16 @@ class DoublyLinkedList:
                 self.tail.next = None
                 return True
         else:
-            current = self.head
-            if current.data == value:
-                current.prev.next = current.next
-                current.next.prev = current.prev
+            current = self.head.next
+            while current is not None:
+                if current.data == value:
+                    current.prev.next = current.next
+                    current.next.prev = current.prev
+                    return True
+                current = current.next
         return None
-
-
+    def display(self):
+        current = self.head
+        while current is not None:
+            print(current.data)
+            current = current.next
