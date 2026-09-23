@@ -51,3 +51,14 @@ class SinglyLinkedList:
         while current is not None:
             print(current.data)
             current = current.next
+
+    def get(self,num):
+        count = 0
+        current = self.head
+        while current is not None:
+            if count == num:
+                return current.data
+
+            current = current.next
+            count+=1
+        return False
