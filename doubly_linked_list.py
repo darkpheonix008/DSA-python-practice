@@ -51,6 +51,18 @@ class DoublyLinkedList:
         else:
             print("can't use insert for index less than 1")
 
+    def reverse(self):
+        if self.head is None:
+            return None
+        elif self.head.next is None:
+            return True
+        current = self.head
+        while current is not None:
+            temp1,temp2 = current.next,current.prev
+            current.next,current.prev = temp2,temp1
+            current = current.prev
+        self.head, self.tail = self.tail, self.head
+        return True
     def get(self,num):
         count = 0
         current = self.head
